@@ -18,9 +18,7 @@
       - 1. Recommend Recipe + Youtube Link(str answer + str link)
       - 2. Recommend Recipe(str answer)
       - 3. Not Recipe(str answer)
-
 2. Datasets
-    - 
 3. Models
     - Ollama
 4. Fine tuning
