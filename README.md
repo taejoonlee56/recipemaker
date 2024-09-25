@@ -1,8 +1,8 @@
-# recipemaker
+# Recipemaker
 
 ## Introduction
 - This is a project for ELG5121 Multimedia Communications course at University of Ottawa
-- Team members:
+- Group 8 members:
   - Taejoon Lee
   - Khalid Juhi
 
