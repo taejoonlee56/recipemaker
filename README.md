@@ -18,15 +18,17 @@
       - 1. Recommend Recipe + Youtube Link(str answer + str link)
       - 2. Recommend Recipe(str answer)
       - 3. Not Recipe(str answer)
-2. Datasets
-3. Models
+2. Datasets [dataset.md](https://github.com/taejoonlee56/recipemaker/blob/main/datasets.md)
+    - There are various datasets on Kaggle.
+    - These dataset need to be pre-processing(unify data structure)
+4. Models
     - Ollama
-4. Fine tuning
-5. Evaluation
-6. Result
-7. Constraints
+5. Fine tuning
+6. Evaluation
+7. Result
+8. Constraints
     - Youtube API has a limit of 10,000 requests per day.
-8. Reference
+9. Reference
 
 
 ## PART 2. Making Dashboard
