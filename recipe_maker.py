@@ -19,6 +19,10 @@ def extract_recipe_name(response):
 
 recipe_name = extract_recipe_name(model_response)
 
+
+
+
+
 def search_youtube(recipe_name):
     api_key = 'YOUR_YOUTUBE_API_KEY'
     search_url = 'https://www.googleapis.com/youtube/v3/search'
