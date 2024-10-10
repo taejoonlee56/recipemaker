@@ -25,12 +25,16 @@ fourbit_models = [
 ] # More models at https://huggingface.co/unsloth
 
 model, tokenizer = FastLanguageModel.from_pretrained(
-    model_name = "unsloth/llama-3-8b-Instruct-bnb-4bit",
+    model_name = "unsloth/Phi-3-mini-4k-instruct",
     max_seq_length = max_seq_length,
     dtype = dtype,
     load_in_4bit = load_in_4bit,
     # token = "hf_...", # use one if using gated models like meta-llama/Llama-2-7b-hf
 )
+
+tokenizer.add_special_tokens({'additional_special_tokens': ['<|eot_id|>', '<|start_header_id|>', '<|end_header_id|>']})
+model.resize_token_embeddings(len(tokenizer))  # 토큰 개수에 맞게 임베딩 크기 조정
+
 
 model = FastLanguageModel.get_peft_model(
     model,
@@ -48,7 +52,7 @@ model = FastLanguageModel.get_peft_model(
 )
 
 # CSV 파일 로드
-dataset = load_dataset('csv', data_files='./processed_dataset.csv', split='train')
+dataset = load_dataset('csv', data_files='./test_processed_dataset.csv', split='train')
 print(dataset.column_names)
 
 
@@ -85,6 +89,7 @@ dataset = apply_chat_template(
     tokenizer = tokenizer,
     chat_template = chat_template,
     # default_system_message = "You are a helpful assistant", << [OPTIONAL]
+    default_system_message = "You are a helpful assistant. Be brief and to the point. Be very concise."
 )
 
 trainer = SFTTrainer(
@@ -96,11 +101,11 @@ trainer = SFTTrainer(
     dataset_num_proc = 11,
     packing = False, # Can make training 5x faster for short sequences.
     args = TrainingArguments(
-        per_device_train_batch_size = 1,
-        gradient_accumulation_steps = 4,
+        per_device_train_batch_size = 2,
+        gradient_accumulation_steps = 8,
         warmup_steps = 3,
         # max_steps = 60,
-        num_train_epochs = 8, # For longer training runs!
+        num_train_epochs = 10, # For longer training runs!
         learning_rate = 5e-5,
         fp16 = not is_bfloat16_supported(),
         bf16 = is_bfloat16_supported(),
@@ -115,4 +120,4 @@ trainer = SFTTrainer(
 
 trainer_stats = trainer.train()
 
-model.save_pretrained_gguf("new_model", tokenizer, maximum_memory_usage=0.8, quantization_method = "q8_0")
+model.save_pretrained_gguf("second_model", tokenizer, maximum_memory_usage=0.6, quantization_method = "q8_0")
