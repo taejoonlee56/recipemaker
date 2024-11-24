@@ -1,0 +1,39 @@
+# Declaration.txt
+
+## Code and Resource Attribution Declaration
+
+This document serves as a declaration of all external code, libraries, APIs, or any resources used in the development of the project. It is mandatory to provide proper attribution for any components not authored by the submitting students.
+
+---
+
+### Attribution Details:
+
+1. **Unsloth:**
+   - **Source:** https://colab.research.google.com/drive/1WZDi7APtQ9VsvOrQSSC5DDtxq159j8iZ#scrollTo=SDTUJv_QiaVh
+   - **Usage:** We used the LLM model training and Ollama model generation guide code provided by Unsloth, in its entirety, with adjustments to the training parameters.
+
+2. **Ollama:**
+   - **Source:** https://ollama.com/
+   - **Usage:** We used Ollama to upload, store, and serve our trained LLM models in the Open Web UI.
+
+3. **Open Web UI:**
+   - **Source:** https://github.com/open-webui/open-webui
+   - **Usage:** We used the open source Open Web UI to deliver the LLM model as a web service to users, and to connect Google and Youtube searches to the recipe generation model's responses.
+
+---
+
+### Academic Integrity Notice:
+
+I, Taejoon Lee, solemnly declare that all external code, libraries, APIs, or any resources used in this project have been properly attributed in this Declaration.txt file. I understand that failure to declare external resources or providing misleading information may be considered academic fraud and can result in severe consequences.
+
+[Student1 Name] Taejoon Lee
+[Date] 2024-11-24
+
+---
+
+I, Khalid Juhi, solemnly declare that all external code, libraries, APIs, or any resources used in this project have been properly attributed in this Declaration.txt file. I understand that failure to declare external resources or providing misleading information may be considered academic fraud and can result in severe consequences.
+
+[Student2 Name] Khalid Juhi
+[Date] 2024-11-24
+
+Note: It is the responsibility of each student to ensure accurate and comprehensive attribution in this Declaration.txt file. Any omissions will be considered a violation of academic integrity.
