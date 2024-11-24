@@ -1,0 +1,15 @@
+
+Ollama model paths: https://ollama.com/taejoonlee
+
+1. 2 million Dataset - (num of epoch = 1)
+ - Tinyllama - Fail - 110 hours of training time...
+ - Llama 3 8B - Fail - 480 hours of training time...
+ - Llama 3.2 3B - Fail - 1060 hours of training time...
+
+
+2. 7k Dataset 
+ - Tinyllama - training time less than 1 hour, excluded due to poor performance
+ - llama 3.2 3b - training time less than 1 hour, good text generation but poor JSON generation performance. Tendency to ignore user requirements
+ - llama 3 8b - Less than 3 hours to train, good JSON and text generation performance
+
+

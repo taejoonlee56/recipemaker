@@ -82,6 +82,8 @@ The system is built on the Open Web UI framework and supports streaming response
 5. type ```ollama serve``` in the terminal to run Ollama.
 
 6. type ```ollama pull taejoonlee/v7``` at your terminal to download the recipe generator model.
+ - The models we attempted to train in this project can be found at ```https://ollama.com/taejoonlee?sort=newest```.
+ - We recommend using the v7 model (llama 3 8b).
 
 7. Run the Open Web UI by typing ```open-webui serve``` in the terminal.
 
