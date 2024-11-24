@@ -205,10 +205,11 @@ async def post_streaming_url(
                                 print("Error decoding JSON:", e)
                                 print("sg_json_buffer:", sg_json_buffer)
 
-                            is_recipe_request = json_response['is_recipe_request']
-                            recipe_name = json_response['recipe_name']
+                            is_recipe_request = json_response.get('is_recipe_request', None)
+                            recipe_name = json_response.get('recipe_name', None)
+                            print("DEBUG: ", is_recipe_request, recipe_name)
                             encoded_recipe_name = urllib.parse.quote(recipe_name)
-                            if is_recipe_request:
+                            if is_recipe_request and recipe_name:
                                 line_json['message']['content'] = f"**These are online search result** \n"
                                 line_json['message']['content'] += f"- Google Search Result: https://www.google.com/search?q={encoded_recipe_name} \n"
                                 line_json['message']['content'] += f"- Youtube Search Result: https://www.youtube.com/results?search_query={encoded_recipe_name}\n"
@@ -216,7 +217,7 @@ async def post_streaming_url(
                                 line_json['message']['content'] += f"#### "
                                 line = (json.dumps(line_json)+"\n").encode('utf-8')
 
-
+                    print("LINE: ", line)
                     yield line
 
             return StreamingResponse(
