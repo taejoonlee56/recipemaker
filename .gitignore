@@ -1,7 +1,7 @@
 .venv/
 .DS_Store
 __pycache__/
-new_model
-_unsloth_sentencepiece_temp
-outputs
-llama.cpp/
+./model_training_code/new_model
+./model_training_code/_unsloth_sentencepiece_temp
+./model_training_code/outputs
+./model_training_code/llama.cpp

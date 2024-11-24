@@ -1,0 +1,1 @@
+ollama create your_model_name -f Modelfile

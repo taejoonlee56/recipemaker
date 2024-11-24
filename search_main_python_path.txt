@@ -1,1 +1,0 @@
-/opt/anaconda3/envs/owu/lib/python3.11/site-packages/open_webui/apps/ollama
