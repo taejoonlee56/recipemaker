@@ -205,7 +205,7 @@ async def post_streaming_url(
                                 print("Error decoding JSON:", e)
                                 print("sg_json_buffer:", sg_json_buffer)
 
-                            is_recipe_request = json_response['recipe_name']
+                            is_recipe_request = json_response['is_recipe_request']
                             recipe_name = json_response['recipe_name']
                             encoded_recipe_name = urllib.parse.quote(recipe_name)
                             if is_recipe_request:
